@@ -39,6 +39,7 @@ export default class App extends Component {
     this.setState({
       items: updatedItems,
       item: "",
+      detail: "",
       id: Math.floor(Math.random() * 100),
       editItem: false,
       completed: false,
@@ -92,6 +93,7 @@ export default class App extends Component {
         <div className="todo-input">
           <TodoInput
             item={this.state.item}
+            detail={this.state.detail}
             handleChange={this.handleChange}
             handleDetails={this.handleDetails}
             handleSubmit={this.handleSubmit}
