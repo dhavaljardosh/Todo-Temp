@@ -59,7 +59,7 @@ export default class TodoInput extends Component {
               <div className="todo-icon">
                 <EditRoundedIcon
                   style={{ color: "darkgreen" }}
-                  onClick={completed ? {} : handleEdit}
+                  onClick={completed ? () => {} : handleEdit}
                 />
                 <DeleteRoundedIcon
                   style={{ color: "red" }}

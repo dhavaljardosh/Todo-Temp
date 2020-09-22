@@ -11,6 +11,7 @@ export default class App extends Component {
     detail: "",
     details: [],
     detailId: Date.now(),
+    filter: 0, // 0 = All, 1 = completed , 2 = active
   };
 
   handleChange = (e) => {
@@ -101,7 +102,13 @@ export default class App extends Component {
           />
         </div>
         <div className="todo-list">
+          <button onClick={() => this.setState({ filter: 0 })}>All</button>
+          <button onClick={() => this.setState({ filter: 1 })}>
+            Completed
+          </button>
+          <button onClick={() => this.setState({ filter: 2 })}>Active</button>
           <TodoList
+            filter={this.state.filter}
             items={this.state.items}
             details={this.state.details}
             clearList={this.clearList}
